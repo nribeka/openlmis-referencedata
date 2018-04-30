@@ -2423,37 +2423,61 @@ resourceTypes:
                   repeat: false
             put:
                 is: [ secured ]
-                description: Update existing facilityTypeApprovedProduct.
+                description: >
+                    Update existing facilityTypeApprovedProduct. After any change, versionId field
+                    will be incremented. The update creates a new current version for an existing
+                    resource or creates an initial version if no resource already exists for the
+                    given id. Update of past versions is not supported.
                 body:
                     application/json:
                 responses:
                     "200":
                         body:
                             application/json:
-
                     "400":
+                        description: Returned when request body is invalid or id param is missing.
                         body:
                             application/json:
                               schema: localizedErrorResponse
+                    "401":
+                        description: Returned when authorization fails.
+                        body:
+                            application/json:
                     "403":
+                        description: Returned when authentication fails.
                         body:
                             application/json:
                               schema: localizedErrorResponse
                     "404":
+                        description: Returned when given FTAP to update was not found.
                         body:
                           application/json:
                             schema: localizedErrorResponse
+                    "409":
+                        description: Returned when user attempts to update past version.
+                        body:
+                            application/json:
+                                schema: localizedErrorResponse
             get:
                 is: [ secured ]
-                description: Get chosen facilityTypeApprovedProduct.
+                description: Get chosen facilityTypeApprovedProduct. If versionId is omitted, returns newest version.
+                queryParameters:
+                    versionId:
+                        displayName: Version ID
+                        type: integer
+                        description: Version of FTAP
+                        example: 1
+                        required: false
                 responses:
                     "200":
                         body:
                             application/json:
-                    401:
+                    "401":
+                        description: Returned when authorization fails.
                         body:
                           application/json:
                     "404":
+                        description: Returned when requested FTAP was not found.
                         body:
                           application/json:
                             schema: localizedErrorResponse
