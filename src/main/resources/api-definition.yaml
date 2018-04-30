@@ -781,6 +781,7 @@ resourceTypes:
                           application/json:
                               schema: localizedErrorResponse
                   "401":
+                      description: Returned when authorization fails.
                       body:
                           application/json:
                   "404":
