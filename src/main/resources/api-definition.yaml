@@ -2434,6 +2434,7 @@ resourceTypes:
                     "200":
                         body:
                             application/json:
+                                schema: approvedProductDto
                     "400":
                         description: Returned when request body is invalid or id param is missing.
                         body:
@@ -2472,6 +2473,7 @@ resourceTypes:
                     "200":
                         body:
                             application/json:
+                                schema: approvedProductDto
                     "401":
                         description: Returned when authorization fails.
                         body:
