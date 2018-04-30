@@ -670,7 +670,7 @@ resourceTypes:
 
   /orderables:
       displayName: Orderable Product
-      put:
+      post:
           is: [ secured ]
           description: Create an Orderable.
           body:
@@ -733,16 +733,66 @@ resourceTypes:
                   repeat: false
           get:
               is: [ secured ]
-              description: Get chosen orderable orderable.
+              description: Get chosen orderable. If versionId is omitted, returns newest version.
+              queryParameters:
+                  versionId:
+                      displayName: Version ID
+                      type: integer
+                      description: Version of orderable
+                      example: 1
+                      required: false
               responses:
                   "200":
                       body:
                         application/json:
                             schema: orderable
+                  "401":
+                      body:
+                        application/json:
                   "404":
+                      description: Returned when requested orderable was not found.
                       body:
                         application/json:
                           schema: localizedErrorResponse
+          put:
+              is: [ secured ]
+              description: >
+                  Update chosen orderable. After any change, versionId field will be incremented.
+                  The update creates a new current version for an existing resource or creates
+                  an initial version if no resource already exists for the given id. Update of
+                  past versions is not supported.
+              body:
+                  application/json:
+                    schema: orderable
+              responses:
+                  "200":
+                      description: Returned when resource was successfuly updated.
+                      body:
+                          application/json:
+                            schema: orderable
+                  "201":
+                      description: Returned when resource was successfuly created.
+                      body:
+                          application/json:
+                            schema: orderable
+                  "400":
+                      description: Returned when request body is invalid or id param is missing.
+                      body:
+                          application/json:
+                              schema: localizedErrorResponse
+                  "401":
+                      body:
+                          application/json:
+                  "404":
+                      description: Returned when given orderable to update was not found.
+                      body:
+                          application/json:
+                              schema: localizedErrorResponse
+                  "409":
+                      description: Returned when user attempts to update past version.
+                      body:
+                          application/json:
+                              schema: localizedErrorResponse
       /{id}/auditLog:
           type: instanceAuditLog
 

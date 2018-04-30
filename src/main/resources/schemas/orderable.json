@@ -48,6 +48,11 @@
     "extraData": {
       "type": "object",
       "title": "extraData"
+    },
+    "versionId": {
+      "type": "integer",
+      "title": "versionId",
+      "description": "the version id of orderable"
     }
   },
   "required": ["productCode", "packRoundingThreshold", "roundToZero", "netContent"]
