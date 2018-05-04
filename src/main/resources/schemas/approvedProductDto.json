@@ -38,7 +38,7 @@
     "versionId": {
       "type": "integer",
       "title": "versionId",
-      "description": "the version id of FTAP. This property is required for update orderable. Leave blank if create new resource"
+      "description": "The version id of FTAP. This property is required for update orderable. Leave blank if creating new resource."
     }
   },
   "required": ["id", "program", "orderable", "facilityType", "maxPeriodsOfStock"]
