@@ -52,7 +52,7 @@
     "versionId": {
       "type": "integer",
       "title": "versionId",
-      "description": "The version id of FTAP. This property is required for update orderable. Leave blank if creating new resource."
+      "description": "The version number of an orderable. This property is required to update the orderable. Leave it blank when creating a new resource."
     }
   },
   "required": ["productCode", "packRoundingThreshold", "roundToZero", "netContent"]
