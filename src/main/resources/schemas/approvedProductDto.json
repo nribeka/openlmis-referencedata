@@ -35,11 +35,17 @@
       "type": "number",
       "title": "emergencyOrderPoint"
     },
-    "versionId": {
-      "type": "integer",
-      "title": "versionId",
-      "description": "The version number of an FTAP. This property is required to update the FTAP. Leave it blank when creating a new resource."
+    "version": {
+      "type": "object",
+      "$ref": "versioning.json",
+      "description": "The version metadata. The field can only be empty when a new FTAP is created."
     }
   },
-  "required": ["id", "program", "orderable", "facilityType", "maxPeriodsOfStock"]
+  "required": [
+    "id",
+    "program",
+    "orderable",
+    "facilityType",
+    "maxPeriodsOfStock"
+  ]
 }
