@@ -750,7 +750,7 @@ resourceTypes:
                       body:
                         application/json:
                   "404":
-                      description: Returned when requested orderable was not found.
+                      description: Returned when requested orderable or specified version was not found.
                       body:
                         application/json:
                           schema: localizedErrorResponse

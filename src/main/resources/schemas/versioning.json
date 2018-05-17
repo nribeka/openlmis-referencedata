@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "Versioning details",
+  "description": "The object contains details about a resource version",
+  "properties": {
+    "version": {
+      "type": "string",
+      "title": "versionId",
+      "description": "The version number of a resource. The property contains the last known version of the resource."
+    },
+    "lastUpdater": {
+      "type": "object",
+      "$ref": "referenceObjectDto.json",
+      "description": "The object reference object of the user that last updated the resource."
+    },
+    "lastUpdatedDate": {
+      "type": ["string", "null"],
+      "title": "lastUpdatedDate",
+      "description": "The date when the given version has been created."
+    }
+  },
+  "required": [
+    "version",
+    "lastUpdated"
+  ]
+}

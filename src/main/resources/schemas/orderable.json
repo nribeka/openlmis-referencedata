@@ -49,11 +49,16 @@
       "type": "object",
       "title": "extraData"
     },
-    "versionId": {
-      "type": "integer",
-      "title": "versionId",
-      "description": "The version number of an orderable. This property is required to update the orderable. Leave it blank when creating a new resource."
+    "version": {
+      "type": "object",
+      "$ref": "versioning.json",
+      "description": "The version metadata. The field can only be empty when a new orderable is created."
     }
   },
-  "required": ["productCode", "packRoundingThreshold", "roundToZero", "netContent"]
+  "required": [
+    "productCode",
+    "packRoundingThreshold",
+    "roundToZero",
+    "netContent"
+  ]
 }
