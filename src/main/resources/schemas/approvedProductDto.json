@@ -35,10 +35,10 @@
       "type": "number",
       "title": "emergencyOrderPoint"
     },
-    "version": {
+    "meta": {
       "type": "object",
-      "$ref": "versioning.json",
-      "description": "The version metadata. The field can only be empty when a new FTAP is created."
+      "$ref": "metadata.json",
+      "description": "The approved product metadata"
     }
   },
   "required": [
