@@ -49,10 +49,10 @@
       "type": "object",
       "title": "extraData"
     },
-    "version": {
+    "meta": {
       "type": "object",
-      "$ref": "versioning.json",
-      "description": "The version metadata. The field can only be empty when a new orderable is created."
+      "$ref": "metadata.json",
+      "description": "The orderable metadata"
     }
   },
   "required": [
