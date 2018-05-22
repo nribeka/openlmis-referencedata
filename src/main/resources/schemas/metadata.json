@@ -2,22 +2,17 @@
   "type": "object",
   "$schema": "http://json-schema.org/draft-04/schema",
   "title": "Versioning details",
-  "description": "The object contains resource metadata",
+  "description": "The object contains a resource metadata",
   "properties": {
-    "version": {
+    "versionId": {
       "type": "string",
-      "title": "version",
+      "title": "versionId",
       "description": "The version number of a resource. The property contains the last known version of the resource."
     },
-    "lastUpdater": {
-      "type": "object",
-      "$ref": "referenceObjectDto.json",
-      "description": "The object reference of the user that last updated the resource."
-    },
-    "lastUpdatedDate": {
-      "type": ["string", "null"],
-      "title": "lastUpdatedDate",
-      "description": "The last updated date."
+    "lastUpdated": {
+      "description": "When the resource last changed - e.g. when the version changed.",
+      "type": "string",
+      "title": "lastUpdated"
     }
   },
   "required": []
