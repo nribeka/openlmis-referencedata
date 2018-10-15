@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "Supply Partner",
+  "description": "The following schema presents a single supply partner",
+  "properties": {
+    "id": {
+      "type": "string",
+      "title": "id"
+    },
+    "entries": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "title": "entries",
+      "items": {
+        "type": "object",
+        "$ref": "supplyPartnerEntry.json"
+      }
+    }
+  }
+}
