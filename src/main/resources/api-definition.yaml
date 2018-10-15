@@ -2608,6 +2608,39 @@ resourceTypes:
                               body:
                                 application/json:
                                   schema: localizedErrorResponse
+            /facilities:
+                get:
+                    is: [ secured ]
+                    description: Get supervising facilities based on the provided parameters.
+                    queryParameters:
+                        programId:
+                            description: >
+                              If provided, the endpoint will retrieve all facilities that are
+                              supervised in the given node and support the given program.
+                            displayName: Program ID
+                            type: string
+                            required: false
+                            repeat: false
+                    responses:
+                        200:
+                            description: The request is valid and a list of supervising facilities has been returned.
+                            body:
+                                application/json:
+                                    schema: facilityArray
+                        400:
+                            description: The query parameters are invalid
+                            body:
+                                application/json:
+                                    schema: localizedErrorResponse
+                        401:
+                            description: The request does not contain a token.
+                            body:
+                                application/json:
+                        403:
+                            description: The request is invalid
+                            body:
+                                application/json:
+                                    schema: localizedErrorResponse
       /{id}/auditLog:
           type: instanceAuditLog
   /roles:
