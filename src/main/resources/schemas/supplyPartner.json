@@ -9,15 +9,15 @@
       "title": "id"
     },
     "entries": {
-      "type": [
-        "null",
-        "array"
-      ],
+      "type": "array",
       "title": "entries",
       "items": {
         "type": "object",
         "$ref": "supplyPartnerEntry.json"
       }
     }
-  }
+  },
+  "required": [
+    "entries"
+  ]
 }
