@@ -8,16 +8,26 @@
       "type": "string",
       "title": "id"
     },
-    "entries": {
+    "code": {
+      "type": "string",
+      "title": "code"
+    },
+    "name": {
+      "type": "string",
+      "title": "name"
+    },
+    "associations": {
       "type": "array",
-      "title": "entries",
+      "title": "associations",
       "items": {
         "type": "object",
-        "$ref": "supplyPartnerEntry.json"
+        "$ref": "supplyPartnerAssociation.json"
       }
     }
   },
   "required": [
-    "entries"
+    "code",
+    "name",
+    "associations"
   ]
 }

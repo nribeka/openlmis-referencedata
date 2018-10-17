@@ -257,7 +257,7 @@ schemas:
   - serviceAccountPage: !include schemas/serviceAccountPage.json
 
   - supplyPartner: !include schemas/supplyPartner.json
-  - supplyPartnerEntry: !include schemas/supplyPartnerEntry.json
+  - supplyPartnerAssociation: !include schemas/supplyPartnerAssociation.json
   - supplyPartnerPage: !include schemas/supplyPartnerPage.json
 
   #FHIR schemas

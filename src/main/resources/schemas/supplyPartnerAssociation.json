@@ -1,8 +1,8 @@
 {
   "type": "object",
   "$schema": "http://json-schema.org/draft-04/schema",
-  "title": "Supply Partner Entry",
-  "description": "The following schema presents a single entry related with a supply partner",
+  "title": "Supply Partner Association",
+  "description": "The following schema presents a single association related with a supply partner",
   "properties": {
     "program": {
       "type": "object",
